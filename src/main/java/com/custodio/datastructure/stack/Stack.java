@@ -4,7 +4,6 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import static java.util.Objects.requireNonNull;
-import static java.util.Optional.ofNullable;
 
 class Stack<T> {
     private Node<T> top;
@@ -33,8 +32,7 @@ class Stack<T> {
      */
     @NotNull
     Stack<T> push(@NotNull final T data) {
-        requireNonNull(data, "The data to be inserted is mandatory");
-        top = new Node<>(data, top);
+        //TODO: Implement push.
         return this;
     }
 
@@ -44,9 +42,8 @@ class Stack<T> {
      * @return The top element from the stack.
      */
     T peek() {
-        return ofNullable(top)
-                       .map(Node::getData)
-                       .orElseThrow(() -> new IllegalStateException("There is not any element in the stack to be peeked."));
+        //TODO: Implement peek.
+        return null;
     }
 
     /**
@@ -55,11 +52,8 @@ class Stack<T> {
      * @return The top element from the stack.
      */
     T pop() {
-        var data = ofNullable(top)
-                           .map(Node::getData)
-                           .orElseThrow(() -> new IllegalStateException("There is not any element in the stack to be popped."));
-        top = top.next;
-        return data;
+        //TODO: Implement pop.
+        return null;
     }
 
     private static final class Node<T> {

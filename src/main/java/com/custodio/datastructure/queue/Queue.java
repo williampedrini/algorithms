@@ -4,7 +4,6 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import static java.util.Objects.requireNonNull;
-import static java.util.Optional.ofNullable;
 
 class Queue<T> {
     private Node<T> head;
@@ -28,18 +27,7 @@ class Queue<T> {
      */
     @NotNull
     Queue<T> add(@NotNull final T value) {
-        requireNonNull(value, "The value to be inserted is mandatory.");
-        if (head == null) {
-            head = new Node<>(value, null);
-            return this;
-        }
-        if (tail == null) {
-            tail = new Node<>(value, null);
-        } else {
-            final var newNode = new Node<>(value, null);
-            tail.next = newNode;
-            tail = newNode;
-        }
+        //TODO: Implement add.
         return this;
     }
 
@@ -50,9 +38,8 @@ class Queue<T> {
      */
     @NotNull
     T peek() {
-        return ofNullable(head)
-                       .map(Node::getData)
-                       .orElseThrow(() -> new IllegalStateException("The queue does not have any elements."));
+        //TODO: Implement peek.
+        return null;
     }
 
     /**
@@ -62,14 +49,8 @@ class Queue<T> {
      */
     @NotNull
     T remove() {
-        final var currentHeadValue = ofNullable(head)
-                                             .map(Node::getData)
-                                             .orElseThrow(() -> new IllegalStateException("The queue does not have any elements."));
-        head = head.next;
-        if (head == null) {
-            tail = null;
-        }
-        return currentHeadValue;
+        //TODO: Implement remove.
+        return null;
     }
 
     private static final class Node<T> {

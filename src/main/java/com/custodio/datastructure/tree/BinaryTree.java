@@ -45,10 +45,8 @@ class BinaryTree<T extends Comparable<T>> {
      */
     @NotNull
     Collection<T> getNodes(@NotNull final BinaryTreeTraversalAlgorithm algorithm) {
-        requireNonNull(algorithm, "The traversal algorithm is mandatory");
-        return ofNullable(traversalAlgorithms.get(algorithm))
-                       .orElseThrow(() -> new IllegalArgumentException("The algorithm is not supported."))
-                       .getNodes();
+        //TODO: Implement getNode.
+        return null;
     }
 
     @NotNull
@@ -57,19 +55,7 @@ class BinaryTree<T extends Comparable<T>> {
     }
 
     private void insert(final TreeNode<T> root, final T data) {
-        if (data.compareTo(root.getData()) <= 0) {
-            if (root.getLeft().isPresent()) {
-                insert(root.getLeft().get(), data);
-            } else {
-                root.setLeft(new TreeNode<>(data));
-            }
-        } else {
-            if (root.getRight().isPresent()) {
-                insert(root.getRight().get(), data);
-            } else {
-                root.setRight(new TreeNode<>(data));
-            }
-        }
+        //TODO: Implement insert
     }
 
     enum BinaryTreeTraversalAlgorithm {
