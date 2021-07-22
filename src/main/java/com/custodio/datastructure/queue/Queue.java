@@ -16,7 +16,8 @@ class Queue<T> {
      * {@code false}: The current {@link Queue} is not empty.
      */
     boolean isEmpty() {
-        return head == null && tail == null;
+        //TODO: Implement
+        return true;
     }
 
     /**
@@ -27,7 +28,7 @@ class Queue<T> {
      */
     @NotNull
     Queue<T> add(@NotNull final T value) {
-        //TODO: Implement add.
+        //TODO: Implement
         return this;
     }
 
@@ -38,7 +39,7 @@ class Queue<T> {
      */
     @NotNull
     T peek() {
-        //TODO: Implement peek.
+        //TODO: Implement
         return null;
     }
 
@@ -49,7 +50,7 @@ class Queue<T> {
      */
     @NotNull
     T remove() {
-        //TODO: Implement remove.
+        //TODO: Implement
         return null;
     }
 

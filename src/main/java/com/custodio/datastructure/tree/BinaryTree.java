@@ -10,7 +10,6 @@ import static com.custodio.datastructure.tree.BinaryTree.BinaryTreeTraversalAlgo
 import static com.custodio.datastructure.tree.BinaryTree.BinaryTreeTraversalAlgorithm.POST_ORDER;
 import static com.custodio.datastructure.tree.BinaryTree.BinaryTreeTraversalAlgorithm.PRE_ORDER;
 import static java.util.Objects.requireNonNull;
-import static java.util.Optional.ofNullable;
 
 class BinaryTree<T extends Comparable<T>> {
     private final TreeNode<T> rootNode;
@@ -32,7 +31,7 @@ class BinaryTree<T extends Comparable<T>> {
     @NotNull
     BinaryTree<T> insert(@NotNull final T data) {
         requireNonNull(data, "The data is mandatory");
-        insert(rootNode, data);
+        //TODO: Implement
         return this;
 
     }
@@ -45,17 +44,13 @@ class BinaryTree<T extends Comparable<T>> {
      */
     @NotNull
     Collection<T> getNodes(@NotNull final BinaryTreeTraversalAlgorithm algorithm) {
-        //TODO: Implement getNode.
+        //TODO: Implement
         return null;
     }
 
     @NotNull
     TreeNode<T> getRootNode() {
         return rootNode;
-    }
-
-    private void insert(final TreeNode<T> root, final T data) {
-        //TODO: Implement insert
     }
 
     enum BinaryTreeTraversalAlgorithm {

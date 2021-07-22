@@ -17,7 +17,7 @@ class PreOrderTraversalAlgorithm<T extends Comparable<T>> implements TraversalAl
     @NotNull
     @Override
     public Collection<T> getNodes() {
-        //TODO: Implement getNode.
+        //TODO: Implement
         return null;
     }
 }

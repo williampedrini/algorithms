@@ -21,7 +21,8 @@ class Stack<T> {
     }
 
     boolean isEmpty() {
-        return top == null;
+        //TODO: Implement
+        return true;
     }
 
     /**
@@ -32,7 +33,7 @@ class Stack<T> {
      */
     @NotNull
     Stack<T> push(@NotNull final T data) {
-        //TODO: Implement push.
+        //TODO: Implement
         return this;
     }
 
@@ -42,7 +43,7 @@ class Stack<T> {
      * @return The top element from the stack.
      */
     T peek() {
-        //TODO: Implement peek.
+        //TODO: Implement
         return null;
     }
 
@@ -52,7 +53,7 @@ class Stack<T> {
      * @return The top element from the stack.
      */
     T pop() {
-        //TODO: Implement pop.
+        //TODO: Implement
         return null;
     }
 

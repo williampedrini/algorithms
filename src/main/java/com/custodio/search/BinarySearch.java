@@ -15,6 +15,7 @@ class BinarySearch<T extends Comparable<T>> {
 
     int search(@NotNull final T value) {
         requireNonNull(value, "The value is mandatory to perform the search");
+        //TODO: Implement
         return -1;
     }
 }

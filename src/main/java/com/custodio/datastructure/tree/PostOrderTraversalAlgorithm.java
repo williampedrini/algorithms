@@ -17,7 +17,7 @@ class PostOrderTraversalAlgorithm<T extends Comparable<T>> implements TraversalA
     @NotNull
     @Override
     public Collection<T> getNodes() {
-        //TODO: Implement getNode.
+        //TODO: Implement
         return null;
     }
 }
