@@ -19,7 +19,7 @@ class QueueWithTwoStacks<T> {
     }
 
     @NotNull
-    QueueWithTwoStacks<T> add() {
+    QueueWithTwoStacks<T> add(@NotNull final T value) {
         //TODO: Implement
         return this;
     }
