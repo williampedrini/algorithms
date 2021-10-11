@@ -11,7 +11,7 @@ public class BinarySearchTest {
         //given
         final var binarySearch = new BinarySearch<>();
         //when
-        final var actualIndex = binarySearch.search(new int[]{-1, 0, 3, 5, 9, 12}, 9);
+        final var actualIndex = BinarySearch.search(new int[]{-1, 0, 3, 5, 9, 12}, 9);
         //then
         final var expectedIndex = 4;
         assertEquals(expectedIndex, actualIndex);
@@ -22,7 +22,7 @@ public class BinarySearchTest {
         //given
         final var binarySearch = new BinarySearch<>();
         //when
-        final var actualIndex = binarySearch.search(new int[]{-1, 0, 3, 5, 9, 12}, 2);
+        final var actualIndex = BinarySearch.search(new int[]{-1, 0, 3, 5, 9, 12}, 2);
         //then
         final var expectedIndex = -1;
         assertEquals(expectedIndex, actualIndex);

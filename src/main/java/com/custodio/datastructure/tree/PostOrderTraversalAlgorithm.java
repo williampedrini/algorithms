@@ -2,7 +2,6 @@ package com.custodio.datastructure.tree;
 
 import org.jetbrains.annotations.NotNull;
 
-import java.util.ArrayList;
 import java.util.Collection;
 
 import static java.util.Objects.requireNonNull;

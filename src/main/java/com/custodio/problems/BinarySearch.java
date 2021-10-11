@@ -1,25 +1,26 @@
 package com.custodio.problems;
 
-import org.jetbrains.annotations.NotNull;
-
-import java.util.List;
-
-import static java.util.Objects.requireNonNull;
-
 /**
  * @see <a href="https://leetcode.com/problems/binary-search/>Leet Code</a>
  */
-class BinarySearch<T extends Comparable<T>> {
+final class BinarySearch<T extends Comparable<T>> {
 
-    int search(final int[] nums, final int target) {
-        var left = 0;
-        var right = 0;
-        var middle = 0;
+    static int search(final int[] nums, final int target) {
+        return search(nums, target, 0, nums.length - 1);
+    }
 
-        while(left <= right) {
-
+    static int search(final int[] nums, final int target, final int left, final int right) {
+        final var middleIndex = right - left / 2;
+        final var middle = nums[middleIndex];
+        if(left > right) {
+            return -1;
         }
-
-        return -1;
+        if(middle == target) {
+            return middleIndex;
+        }
+        if(target > middle) {
+            return search(nums, target, middleIndex, right);
+        }
+        return search(nums, target, left, middleIndex);
     }
 }
