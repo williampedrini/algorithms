@@ -1,4 +1,4 @@
-package com.custodio.problems;
+package com.custodio.problems.hackerrank;
 
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -8,11 +8,11 @@ import static java.util.Optional.ofNullable;
 
 class AddTwoNumbersWithLinkedList {
 
-    Node addTwoNumbers(final Node l1, final Node l2) {
-        return addTwoNumbers(l1, l2, 0);
+    static Node solution(final Node l1, final Node l2) {
+        return solution(l1, l2, 0);
     }
 
-    Node addTwoNumbers(final Node l1, final Node l2, final Integer carryOver) {
+    static Node solution(final Node l1, final Node l2, final Integer carryOver) {
         final var newValue = l1.getValue() + l2.getValue() + carryOver;
         final var result = new Node(newValue % 10);
 
@@ -28,7 +28,7 @@ class AddTwoNumbersWithLinkedList {
         l2.setNext(normalizedL1Next);
 
         final var newCarryOver = newValue / 10;  //We get the leftover to be send as carry over.
-        result.setNext(addTwoNumbers(normalizedL1Next, normalizedL2Next, newCarryOver));
+        result.setNext(solution(normalizedL1Next, normalizedL2Next, newCarryOver));
         return result;
     }
 

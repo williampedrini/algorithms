@@ -1,4 +1,4 @@
-package com.custodio.problems;
+package com.custodio.problems.codepro;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -8,9 +8,9 @@ import java.util.List;
 /**
  * @see <a href="https://www.techseries.dev/products/coderpro/categories/1831147/posts/6231429">Tech Series</a>
  */
-public class CanSpell {
+final class CanSpell {
 
-    public boolean canSpell(@NotNull final List<String> magazine, final List<String> note) {
+    static boolean solution(@NotNull final List<String> magazine, final List<String> note) {
         final var magazineLetter = new HashMap<String, Integer>(0);
 
         for (final var letter : magazine) {

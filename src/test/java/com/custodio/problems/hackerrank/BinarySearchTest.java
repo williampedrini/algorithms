@@ -1,8 +1,9 @@
-package com.custodio.problems;
+package com.custodio.problems.hackerrank;
 
+import org.junit.Assert;
 import org.junit.Test;
 
-import static org.junit.Assert.assertEquals;
+import static com.custodio.problems.hackerrank.BinarySearch.solution;
 
 public class BinarySearchTest {
 
@@ -11,10 +12,10 @@ public class BinarySearchTest {
         //given
         final var binarySearch = new BinarySearch<>();
         //when
-        final var actualIndex = BinarySearch.search(new int[]{-1, 0, 3, 5, 9, 12}, 9);
+        final var actualIndex = solution(new int[]{-1, 0, 3, 5, 9, 12}, 9);
         //then
         final var expectedIndex = 4;
-        assertEquals(expectedIndex, actualIndex);
+        Assert.assertEquals(expectedIndex, actualIndex);
     }
 
     @Test
@@ -22,9 +23,9 @@ public class BinarySearchTest {
         //given
         final var binarySearch = new BinarySearch<>();
         //when
-        final var actualIndex = BinarySearch.search(new int[]{-1, 0, 3, 5, 9, 12}, 2);
+        final var actualIndex = solution(new int[]{-1, 0, 3, 5, 9, 12}, 2);
         //then
         final var expectedIndex = -1;
-        assertEquals(expectedIndex, actualIndex);
+        Assert.assertEquals(expectedIndex, actualIndex);
     }
 }

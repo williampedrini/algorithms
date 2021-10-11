@@ -1,6 +1,5 @@
-package com.custodio.problems;
+package com.custodio.problems.codepro;
 
-import java.util.Collection;
 import java.util.Comparator;
 import java.util.LinkedList;
 import java.util.List;
@@ -23,11 +22,11 @@ import static java.util.Comparator.comparing;
  * <p>
  * THEN Return input as [[5,0], [7,0], [5,2], [6,1], [4,4], [7,1]]
  */
-public final class QueueReconstructionByHeight {
+final class QueueReconstructionByHeight {
     private static final int HEIGHT_INDEX = 0;
     private static final int HORIZON_INDEX = 1;
 
-    public static int[][] solution(int[][] input) {
+    static int[][] solution(int[]... input) {
         final Comparator<int[]> heightComparator = comparing(person -> person[HEIGHT_INDEX]);
         final Comparator<int[]> horizonComparator = comparing(person -> person[HORIZON_INDEX]);
         sort(input, heightComparator.reversed().thenComparing(horizonComparator)); //order the list with the tallest person in the front and use horizon if the height is equal.

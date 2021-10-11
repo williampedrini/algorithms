@@ -1,4 +1,4 @@
-package com.custodio.problems;
+package com.custodio.problems.codepro;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -6,7 +6,7 @@ import java.util.HashMap;
 /**
  * @see <a href="https://www.techseries.dev/products/coderpro/categories/1831147/posts/6178059">Tech Series</a>
  */
-class SortingListWithThreeUniqueNumbers {
+final class SortingListWithThreeUniqueNumbers {
 
     /**
      * Sort the current array of unique numbers. This array can only contain 1, 2 or 3.
@@ -14,7 +14,7 @@ class SortingListWithThreeUniqueNumbers {
      * @param numbers The list of numbers to be sorted.
      * @return The sorted list of numbers.
      */
-    Integer[] sort(final int[] numbers) {
+    static Integer[] solution(final int... numbers) {
         final var quantityPerNumber = new HashMap<Integer, Integer>(0);
 
         for (final var number : numbers) {
