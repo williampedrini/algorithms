@@ -1,10 +1,10 @@
-package com.custodio.problems.graph;
+package com.custodio.datastructure.graph;
 
 import org.junit.Test;
 
 import static org.junit.Assert.assertTrue;
 
-public class DepthFirstSearchTest {
+public class BreadthFirstSearchTest {
 
     @Test
     public void when_ThereIsAMatchForValueInGraph_Then_ReturnTrueForHasPath() {
@@ -14,7 +14,7 @@ public class DepthFirstSearchTest {
                                   .add("A", "C", "D", "E")
                                   .add("B", "T");
         //when
-        final var hasNodeWithValue = new DepthFirstSearch<String>().hasPath(graph, "T");
+        final var hasNodeWithValue = new BreadthFirstSearch<String>().hasPath(graph, "T");
         //then
         assertTrue(hasNodeWithValue);
     }
@@ -31,7 +31,7 @@ public class DepthFirstSearchTest {
                                   .add("D", "E", "F")
                                   .add("F", "T");
         //when
-        final var hasNodeWithValue = new DepthFirstSearch<String>().hasPath(graph, "T");
+        final var hasNodeWithValue = new BreadthFirstSearch<String>().hasPath(graph, "T");
         //then
         assertTrue(hasNodeWithValue);
     }

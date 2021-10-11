@@ -1,4 +1,4 @@
-package com.custodio.problems.graph;
+package com.custodio.datastructure.graph;
 
 import org.jetbrains.annotations.NotNull;
 
