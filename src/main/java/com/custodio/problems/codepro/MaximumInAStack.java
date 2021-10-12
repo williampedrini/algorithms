@@ -9,6 +9,9 @@ import java.util.Deque;
 import static java.util.Objects.requireNonNull;
 import static java.util.Optional.ofNullable;
 
+/**
+ * @see <a href="https://www.techseries.dev/products/coderpro/categories/1831147/posts/6178061">Tech Series</a>
+ */
 final class MaximumInAStack<T extends Comparable<T>> {
     private final Deque<T> stack;
     private final Deque<T> maxes;
