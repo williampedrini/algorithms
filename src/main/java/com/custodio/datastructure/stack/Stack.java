@@ -4,6 +4,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import static java.util.Objects.requireNonNull;
+import static java.util.Optional.ofNullable;
 
 class Stack<T> {
     private Node<T> top;
@@ -21,8 +22,7 @@ class Stack<T> {
     }
 
     boolean isEmpty() {
-        //TODO: Implement
-        return true;
+        return top == null;
     }
 
     /**
@@ -33,7 +33,8 @@ class Stack<T> {
      */
     @NotNull
     Stack<T> push(@NotNull final T data) {
-        //TODO: Implement
+        requireNonNull(data, "The data is mandatory.");
+        top = new Node<>(data, top);
         return this;
     }
 
@@ -43,8 +44,9 @@ class Stack<T> {
      * @return The top element from the stack.
      */
     T peek() {
-        //TODO: Implement
-        return null;
+        return ofNullable(top)
+                       .orElseThrow(() -> new IllegalStateException("There is not any element in the stack"))
+                       .getData();
     }
 
     /**
@@ -53,8 +55,13 @@ class Stack<T> {
      * @return The top element from the stack.
      */
     T pop() {
-        //TODO: Implement
-        return null;
+        return ofNullable(top)
+                       .map(currentTop -> {
+                           final var value = currentTop.getData();
+                           top = currentTop.getNext();
+                           return value;
+                       })
+                       .orElseThrow(() -> new IllegalStateException("There is not any element in the stack"));
     }
 
     private static final class Node<T> {
@@ -71,8 +78,13 @@ class Stack<T> {
         }
 
         @NotNull
-        public T getData() {
+        private T getData() {
             return data;
+        }
+
+        @Nullable
+        private Node<T> getNext() {
+            return next;
         }
     }
 }
