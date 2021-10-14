@@ -16,7 +16,7 @@
     </properties>
 
     <scm>
-        <connection>scm:git:https://git@github.com:williampedrini/algorithms.git</connection>
+        <connection>scm:https://github.com/williampedrini/algorithms.git</connection>
     </scm>
 
     <dependencies>
