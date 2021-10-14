@@ -4,6 +4,8 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.Stack;
 
+import static java.util.Objects.requireNonNull;
+
 class QueueWithTwoStacks<T> {
     private final Stack<T> newestValues;
     private final Stack<T> oldestValues;
@@ -13,25 +15,30 @@ class QueueWithTwoStacks<T> {
         oldestValues = new Stack<>();
     }
 
-    boolean isEmpty() {
-        //TODO: Implement
-        return true;
-    }
-
     @NotNull
     QueueWithTwoStacks<T> add(@NotNull final T value) {
-        //TODO: Implement
+        requireNonNull(value, "The value is mandatory.");
+        newestValues.push(value);
+        populateOldestValuesIfEmpty();
         return this;
     }
 
+    @NotNull
     T peek() {
-        //TODO: Implement
-        return null;
+        return oldestValues.peek();
     }
 
     @NotNull
     T remove() {
-        //TODO: Implement
-        return null;
+        return oldestValues.pop();
+    }
+
+    private void populateOldestValuesIfEmpty() {
+        if (oldestValues.isEmpty()) {
+            while (!newestValues.isEmpty()) {
+                final var currentNewestTopValue = newestValues.pop();
+                oldestValues.push(currentNewestTopValue);
+            }
+        }
     }
 }

@@ -5,11 +5,11 @@ package com.custodio.problems.hackerrank;
  */
 final class BinarySearch<T extends Comparable<T>> {
 
-    static int solution(final int[] nums, final int target) {
-        return solution(nums, target, 0, nums.length - 1);
+    static int search(final int[] nums, final int target) {
+        return search(nums, target, 0, nums.length - 1);
     }
 
-    static int solution(final int[] nums, final int target, final int left, final int right) {
+    static int search(final int[] nums, final int target, final int left, final int right) {
         final var middleIndex = right - left / 2;
         final var middle = nums[middleIndex];
         if(left > right) {
@@ -19,8 +19,8 @@ final class BinarySearch<T extends Comparable<T>> {
             return middleIndex;
         }
         if(target > middle) {
-            return solution(nums, target, middleIndex, right);
+            return search(nums, target, middleIndex, right);
         }
-        return solution(nums, target, left, middleIndex);
+        return search(nums, target, left, middleIndex);
     }
 }

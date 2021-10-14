@@ -2,6 +2,8 @@ package com.custodio.datastructure.queue;
 
 import org.junit.Test;
 
+import java.util.EmptyStackException;
+
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertThrows;
 
@@ -24,7 +26,7 @@ public class QueueWithTwoStacksTest {
         //given
         final var underTest = new QueueWithTwoStacks<Long>();
         //then
-        assertThrows(IllegalStateException.class, () -> {
+        assertThrows(EmptyStackException.class, () -> {
             //when
             underTest.remove();
         });

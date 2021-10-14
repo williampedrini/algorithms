@@ -4,6 +4,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import static java.util.Objects.requireNonNull;
+import static java.util.Optional.ofNullable;
 
 class Queue<T> {
     private Node<T> head;
@@ -16,8 +17,7 @@ class Queue<T> {
      * {@code false}: The current {@link Queue} is not empty.
      */
     boolean isEmpty() {
-        //TODO: Implement
-        return true;
+        return head == null && tail == null;
     }
 
     /**
@@ -28,7 +28,18 @@ class Queue<T> {
      */
     @NotNull
     Queue<T> add(@NotNull final T value) {
-        //TODO: Implement
+        requireNonNull(value, "The value to be inserted is mandatory.");
+        if (head == null) {
+            head = new Node<>(value, null);
+            return this;
+        }
+        if (tail == null) {
+            tail = new Node<>(value, null);
+        } else {
+            final var newNode = new Node<>(value, null);
+            tail.next = newNode;
+            tail = newNode;
+        }
         return this;
     }
 
@@ -39,8 +50,9 @@ class Queue<T> {
      */
     @NotNull
     T peek() {
-        //TODO: Implement
-        return null;
+        return ofNullable(head)
+                       .map(Node::getData)
+                       .orElseThrow(() -> new IllegalStateException("The queue does not have any elements."));
     }
 
     /**
@@ -50,8 +62,14 @@ class Queue<T> {
      */
     @NotNull
     T remove() {
-        //TODO: Implement
-        return null;
+        final var currentHeadValue = ofNullable(head)
+                                             .map(Node::getData)
+                                             .orElseThrow(() -> new IllegalStateException("The queue does not have any elements."));
+        head = head.next;
+        if (head == null) {
+            tail = null;
+        }
+        return currentHeadValue;
     }
 
     private static final class Node<T> {
