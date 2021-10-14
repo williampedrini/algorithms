@@ -6,7 +6,7 @@
 
     <groupId>org.example</groupId>
     <artifactId>data-structure</artifactId>
-    <version>1.0.0-m2-SNAPSHOT</version>
+    <version>1.0.0.M2-SNAPSHOT</version>
 
     <properties>
         <annotations.version>RELEASE</annotations.version>
@@ -16,7 +16,8 @@
     </properties>
 
     <scm>
-        <connection>scm:https://github.com/williampedrini/algorithms.git</connection>
+        <connection>scm:git:https://github.com/williampedrini/algorithms.git</connection>
+        <url>https://github.com/williampedrini/algorithms.git</url>
     </scm>
 
     <dependencies>
