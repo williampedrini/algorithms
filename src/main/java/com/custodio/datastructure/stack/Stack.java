@@ -1,10 +1,6 @@
 package com.custodio.datastructure.stack;
 
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
-
-import static java.util.Objects.requireNonNull;
-import static java.util.Optional.ofNullable;
 
 class Stack<T> {
     private Node<T> top;
@@ -18,11 +14,12 @@ class Stack<T> {
      * @param topData The top node data to be added as top.
      */
     Stack(@NotNull final T topData) {
-        top = new Node<>(topData);
+        //TODO: Implement
     }
 
     boolean isEmpty() {
-        return top == null;
+        //TODO: Implement
+        return false;
     }
 
     /**
@@ -33,8 +30,7 @@ class Stack<T> {
      */
     @NotNull
     Stack<T> push(@NotNull final T data) {
-        requireNonNull(data, "The data is mandatory.");
-        top = new Node<>(data, top);
+        //TODO: Implement
         return this;
     }
 
@@ -44,9 +40,8 @@ class Stack<T> {
      * @return The top element from the stack.
      */
     T peek() {
-        return ofNullable(top)
-                       .orElseThrow(() -> new IllegalStateException("There is not any element in the stack"))
-                       .getData();
+        //TODO: Implement
+        return null;
     }
 
     /**
@@ -55,36 +50,11 @@ class Stack<T> {
      * @return The top element from the stack.
      */
     T pop() {
-        return ofNullable(top)
-                       .map(currentTop -> {
-                           final var value = currentTop.getData();
-                           top = currentTop.getNext();
-                           return value;
-                       })
-                       .orElseThrow(() -> new IllegalStateException("There is not any element in the stack"));
+        //TODO: Implement
+        return null;
     }
 
     private static final class Node<T> {
-        private final T data;
-        private final Node<T> next;
-
-        private Node(@NotNull final T data, @Nullable final Node<T> next) {
-            this.data = requireNonNull(data, "The data is mandatory to build a node.");
-            this.next = next;
-        }
-
-        private Node(@NotNull final T data) {
-            this(data, null);
-        }
-
-        @NotNull
-        private T getData() {
-            return data;
-        }
-
-        @Nullable
-        private Node<T> getNext() {
-            return next;
-        }
+        //TODO: Implement
     }
 }

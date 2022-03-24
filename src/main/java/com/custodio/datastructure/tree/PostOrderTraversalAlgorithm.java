@@ -2,7 +2,6 @@ package com.custodio.datastructure.tree;
 
 import org.jetbrains.annotations.NotNull;
 
-import java.util.ArrayList;
 import java.util.Collection;
 
 import static java.util.Objects.requireNonNull;
@@ -17,13 +16,7 @@ class PostOrderTraversalAlgorithm<T extends Comparable<T>> implements TraversalA
     @NotNull
     @Override
     public Collection<T> getNodes() {
-        return getNodes(new ArrayList<>(1), tree.getRootNode());
-    }
-
-    private Collection<T> getNodes(final Collection<T> values, final TreeNode<T> root) {
-        root.getLeft().ifPresent(leftNode -> getNodes(values, leftNode));
-        root.getRight().ifPresent(rightNode -> getNodes(values, rightNode));
-        values.add(root.getData());
-        return values;
+        //TODO: Implement
+        return null;
     }
 }
